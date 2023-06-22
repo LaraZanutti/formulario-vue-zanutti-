@@ -119,8 +119,8 @@ export default {
       return emailRegex.test(this.email);
     },
     validationPassword() {
-      const numberRegex = /[0-9]/;
-      return this.password.length > 6 && numberRegex.test(this.password);
+      const numberRegex = /^(?=.*[0-9])(?=.*[a-zA-Z]).{6,}$/;
+      return numberRegex.test(this.password);
     },
     hayError() {
       return (
